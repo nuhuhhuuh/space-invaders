@@ -4,7 +4,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . c c c c c c c c c . . . 
         . . . c f c c a a a a c a c . . 
         . . c c f f f f a a a c a a c . 
-        . . c c a f f c a a f f f a a c 
+        . . c c a f f c a 1 f f f a a c 
         . . c c a a a a b c f f f a a c 
         . c c c c a c c b a f c a a c c 
         c a f f c c c a b b 6 b b b c c 
@@ -86,12 +86,10 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
     music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.UntilDone)
 })
 info.onCountdownEnd(function () {
-    if (info.score() < info.highScore()) {
+    if (info.score() <= 10) {
         game.gameOver(true)
-    } else if (false) {
+    } else {
         game.gameOver(false)
-    } else if (false) {
-        game.gameOver(true)
     }
 })
 info.onLifeZero(function () {
